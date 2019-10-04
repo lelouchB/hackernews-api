@@ -3,16 +3,15 @@ import "./App.css";
 import { getStoryIds } from "./services/hnApi";
 
 function App() {
-  const [storyIds, setStoryIds] = useState([]);
+  const [storyIds, setstoryIds] = useState([]);
 
   useEffect(() => {
-    getStoryIds();
+    getStoryIds().then(data => data && setstoryIds(data));
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">Hello React</header>
-      <p>{storyIds}</p>
+    <div>
+      <p>{JSON.stringify(storyIds)}</p>
     </div>
   );
 }
