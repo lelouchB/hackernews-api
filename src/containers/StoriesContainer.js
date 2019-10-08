@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getStoryIds, getStory } from "../services/hnApi";
+import { getStoryIds } from "../services/hnApi";
 import { Story } from "../components/Story";
 
 export const StoriesContainer = () => {
@@ -7,8 +7,14 @@ export const StoriesContainer = () => {
 
   useEffect(() => {
     getStoryIds().then(data => setstoryIds(data));
-    getStory(20970623).then(data => console.log(data));
   }, []);
 
-  return storyIds.map(storyId => <Story storyId={storyId} />);
+  return (
+    <>
+      <h2>Hacker News Stories</h2>
+      {storyIds.map(storyId => (
+        <Story key={storyId} storyId={storyId} />
+      ))}
+    </>
+  );
 };
