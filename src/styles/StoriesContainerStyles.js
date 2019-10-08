@@ -15,7 +15,7 @@ body{
     margin:0;
     padding:0;
     line-height:1;
-    color:#202020;
+    color: #202020;
     background-color : #fafafe;
     font-family:Arial,Helvetica,sans-serif;
     font-size:16px;
