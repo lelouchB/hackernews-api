@@ -22,14 +22,14 @@ export const Story = ({ storyId }) => {
         <a href={story.url}>{story.title} </a>
       </StoryTitle>
       <StoryMeta>
-        <span className="story__by" data-testid="story-by">
+        <span data-testid="story-by">
           <StoryMetaElement color="#000">By:</StoryMetaElement>
           {story.by}
         </span>
 
-        <span class="story__time" data-testid="story-time">
+        <span data-testid="story-time">
           <StoryMetaElement>Posted:</StoryMetaElement>
-          {`   `} {story.time}
+          {story.time}
         </span>
       </StoryMeta>
     </StoryWrapper>
