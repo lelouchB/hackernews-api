@@ -7,7 +7,6 @@ cache:
 script:
  - npm install
  - npm run build --if-present
- - npm test
 deploy:
   provider: pages
   skip_cleanup: true
