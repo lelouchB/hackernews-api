@@ -1,3 +1,7 @@
+# Hacker News Stories
+
+Building a newsreader using the HackerNews Api, React, React Testing Library, Styled Components, Axios
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

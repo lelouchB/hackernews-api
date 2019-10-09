@@ -5,10 +5,11 @@ import {
   StoriesContainerWrapper,
   GolbalStyle
 } from "../styles/StoriesContainerStyles";
+import { useInfiniteScroll } from "../hooks/useInfinteScroll";
 
 export const StoriesContainer = () => {
   const [storyIds, setstoryIds] = useState([]);
-
+  const { count } = useInfiniteScroll();
   useEffect(() => {
     getStoryIds().then(data => setstoryIds(data));
   }, []);
@@ -17,8 +18,8 @@ export const StoriesContainer = () => {
     <>
       <GolbalStyle />
       <StoriesContainerWrapper data-test-id="stories-container">
-        <h2>Hacker News Stories</h2>
-        {storyIds.map(storyId => (
+        <h1>Hacker News Stories</h1>
+        {storyIds.slice(0, count).map(storyId => (
           <Story key={storyId} storyId={storyId} />
         ))}
       </StoriesContainerWrapper>
