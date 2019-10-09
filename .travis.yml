@@ -3,11 +3,10 @@ node_js:
   - "stable"
 cache:
   directories:
-  - node_modules
+    - node_modules
 script:
- - npm install
- - npm run build --if-present
- - npm test
+  - npm install
+  - npm run build --if-present
 deploy:
   provider: pages
   skip_cleanup: true
